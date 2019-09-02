@@ -20,6 +20,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         view.backgroundColor = .white
         initializePickerView()
         initializeTableView()
+        MediaAPI.getMediaItems(
+            path: mediaTypes[0]["path"]!,
+            onComplete: {
+                data, error in
+                self.mediaItems = data
+                DispatchQueue.main.async {
+                    self.mediaTableView.reloadData()
+                }
+            }
+        )
     }
     
     func initializePickerView() {
@@ -57,7 +67,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Selected \(mediaTypes[row]["name"]!)")
+        MediaAPI.getMediaItems(
+            path: mediaTypes[row]["path"]!,
+            onComplete: {
+                data, error in
+                self.mediaItems = data
+                DispatchQueue.main.async {
+                    self.mediaTableView.reloadData()
+                }
+            }
+        )
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +87,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "mediaCell", for: indexPath) as! MediaTableViewCell
         cell.media = mediaItems[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
 }

@@ -24,4 +24,20 @@ struct MediaAPI {
         ]
         return MediaTypes
     }
+    
+    static func getMediaItems(path: String, onComplete complete: @escaping(_ data: [Media], _ error: Error?) -> Void) {
+        let baseURL = "https://rss.itunes.apple.com/api/v1/us/"
+        let url = URL(string: baseURL + path)!
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            guard error == nil else { return complete([], error) }
+            if let data = data {
+                do {
+                    let res = try JSONDecoder().decode(MediaResponse.self, from: data)
+                    complete(res.feed.results, nil)
+                } catch { complete([], error) }
+            }
+        }.resume()
+    }
 }
