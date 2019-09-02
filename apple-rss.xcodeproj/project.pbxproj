@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8913D991231D8972003FAC8D /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913D990231D8972003FAC8D /* Media.swift */; };
+		8913D993231D89A1003FAC8D /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913D992231D89A1003FAC8D /* MediaTableViewCell.swift */; };
 		899155E3231D87530051E481 /* MediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899155E2231D87530051E481 /* MediaAPI.swift */; };
 		89CE4E13231D76290083594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE4E12231D76290083594C /* AppDelegate.swift */; };
 		89CE4E15231D76290083594C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE4E14231D76290083594C /* ViewController.swift */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8913D990231D8972003FAC8D /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		8913D992231D89A1003FAC8D /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		899155E2231D87530051E481 /* MediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAPI.swift; sourceTree = "<group>"; };
 		89CE4E0F231D76290083594C /* apple-rss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apple-rss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE4E12231D76290083594C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +58,11 @@
 			children = (
 				89CE4E12231D76290083594C /* AppDelegate.swift */,
 				89CE4E14231D76290083594C /* ViewController.swift */,
+				8913D992231D89A1003FAC8D /* MediaTableViewCell.swift */,
+				8913D990231D8972003FAC8D /* Media.swift */,
+				899155E2231D87530051E481 /* MediaAPI.swift */,
 				89CE4E19231D762A0083594C /* Assets.xcassets */,
 				89CE4E1E231D762A0083594C /* Info.plist */,
-				899155E2231D87530051E481 /* MediaAPI.swift */,
 			);
 			path = "apple-rss";
 			sourceTree = "<group>";
@@ -132,7 +138,9 @@
 			files = (
 				89CE4E15231D76290083594C /* ViewController.swift in Sources */,
 				899155E3231D87530051E481 /* MediaAPI.swift in Sources */,
+				8913D991231D8972003FAC8D /* Media.swift in Sources */,
 				89CE4E13231D76290083594C /* AppDelegate.swift in Sources */,
+				8913D993231D89A1003FAC8D /* MediaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
